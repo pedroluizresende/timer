@@ -7,7 +7,7 @@ import alarmSound from './audio/alarm.mp3'
 import './App.css'
 
 function App() {
-  const [timer, setTimer] = useState('00:00')
+  const [timer, setTimer] = useState(null)
   const { timerValue, isRunning, setIsRunning} = useContext(TimerContext)
   const [remainingTime, setRemainingTime] = useState(0);
 
@@ -35,7 +35,8 @@ function App() {
     if(isRunning) {
     const minutes = Math.floor(remainingTime / 60);
     const seconds = remainingTime % 60;
-    setTimer(`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`)
+    setTimer(`${minutes.toString().padStart(2, '0')}:${seconds
+      .toString().padStart(2, '0')}`)
     if(remainingTime === 0 ) {
       const alarm = new Audio(alarmSound)
       alarm.volume = 0.5;
@@ -57,10 +58,14 @@ function App() {
     <header>
       <h1>Timer</h1>
     </header>
-    <div>
-    <h2>{ timer }</h2> 
-    </div>
+    <div className='timer-container'>
+      {
+        isRunning && 
+        <h2>{ timer }</h2>
+      } 
+   
     <FormTimer/>
+    </div>
     </>
   );
 }

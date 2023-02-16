@@ -2,22 +2,32 @@ import React, { useContext, useEffect, useState } from 'react'
 import { TimerContext } from '../context/TimerProvider';
 
 function FormTimer() {
+  const [preview, setPreview] = useState('00:00')
   const [timerInput, setTimerInput] = useState('');
   const [ isDisabled, setIsDisabled] = useState(true)
   const [ background, setBackground] = useState(true)
   const {setTimerValue, isRunning, setIsRunning } = useContext(TimerContext)
   const [ isBigger, setIsBigger ] = useState(false)
 
+
+  const setInPreview = () => {
+    const mins = (+timerInput.split('m')[0])
+    const seconds = (+timerInput.split('m')[1].split('s')[0])
+    setPreview(`${mins.toString().padStart(2, '0')}:${seconds
+      .toString().padStart(2, '0')}`)
+  }
+
 useEffect(() =>{
   const regex = /^\d+m\d+s$/
   if(regex.test(timerInput)) {
     setIsDisabled(false)
     setBackground(true)
+    setInPreview()
   } else {
     setIsDisabled(true)
     setBackground(false)
+    setPreview('00:00')
   }
-
   if(timerInput === '') {
     setBackground(true)
   }
@@ -60,6 +70,11 @@ useEffect(() =>{
   }
 
   return (
+    <>
+    {
+      !isRunning &&  <h2>{ preview }</h2> 
+    }
+   
     <form>
       <input
         type="text"
@@ -82,6 +97,7 @@ useEffect(() =>{
       >
         Start
       </button>
+      <section className='options-btn'>
       <button
         type='button'
         onClick={ () => {
@@ -114,8 +130,9 @@ useEffect(() =>{
       >
         30 min
       </button>
-      
+      </section>
     </form>
+    </>
   )
 }
 

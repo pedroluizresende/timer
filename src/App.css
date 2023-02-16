@@ -2,6 +2,17 @@ header {
   text-align: center;
 }
 
+.timer-container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.timer-container form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
