@@ -4,8 +4,6 @@ import { TimerContext } from './context/TimerProvider';
 import beepSound from './audio/beep.mp3'
 import alarmSound from './audio/alarm.mp3'
 
-import './App.css'
-
 function App() {
   const [timer, setTimer] = useState(null)
   const { timerValue, isRunning, setIsRunning} = useContext(TimerContext)
