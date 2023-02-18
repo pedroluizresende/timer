@@ -9,7 +9,7 @@ function App() {
   const { timerValue, isRunning, setIsRunning,
      ending, setEnding} = useContext(TimerContext)
   const [remainingTime, setRemainingTime] = useState(0);
-  const [finish, setFinish] = useState(true)
+  const [finish, setFinish] = useState(false)
 
   const decreaseTime = () => {
     setRemainingTime(prevTime => prevTime - 1);
