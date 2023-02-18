@@ -1,15 +1,17 @@
 .options-btn {
-  margin-top: 40px;
+  margin-top: 20px;
   width: 100%;
   h3 {
     letter-spacing: 0.3rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     button {
       width: 100px;
+      margin: 8px 8px;
     }
   }
 }
@@ -26,18 +28,17 @@
   background-color: $bg-white;
   color: $secundary;
   padding: 20px;
-  font-size: 24px;
+  font-size: 1.5rem;
   z-index: 9999;
-  width: 600px;
+  width: 90%;
   height: 400px;
   border-radius: 10px;
   animation: fade 0.5s forwards;
   cursor: pointer;
   
   @include elevation(2);
-
-
   h2{
+    font-size: 1.2rem;
     letter-spacing: 0.3rem;
     margin-top: 40px;
   }
@@ -45,13 +46,13 @@
 }
 
 #clock-icon {
-  font-size: 100px;
+  font-size: 6.25rem;
 }
 
 
 #close-icon {
   position: absolute;
-  font-size: 30px;
+  font-size: 1.88rem;
   top: 12px;
   right: 12px;
 }

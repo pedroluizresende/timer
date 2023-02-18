@@ -9,7 +9,7 @@ function App() {
   const { timerValue, isRunning, setIsRunning,
      ending, setEnding} = useContext(TimerContext)
   const [remainingTime, setRemainingTime] = useState(0);
-  const [finish, setFinish] = useState(false)
+  const [finish, setFinish] = useState(true)
 
   const decreaseTime = () => {
     setRemainingTime(prevTime => prevTime - 1);
@@ -70,11 +70,8 @@ function App() {
       }
      }
     >
-    <header>
       <h1>Temporizador</h1>
-    </header>
     <div className='timer-container'>
-      <div className='timer'>
         {
           isRunning && 
           <h2
@@ -83,9 +80,7 @@ function App() {
             animation: ending.isEnding ? 'mudanca 1s infinite': 'none'
           }}
           >{ timer }</h2>
-        }  
-      </div>
-   
+        }     
     <FormTimer/>
     </div>
     

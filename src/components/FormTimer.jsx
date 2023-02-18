@@ -76,11 +76,9 @@ useEffect(() =>{
 
   return (
     <>
-    <div className='timer'>
     {
       !isRunning &&  <h2>{ preview }</h2> 
     }
-   </div>
     <form>
       <fieldset>
         <input
