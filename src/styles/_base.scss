@@ -25,6 +25,7 @@ html, body {
 body {
   color: $secundary;
   font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   background-color: $bg-white;
@@ -58,13 +59,12 @@ p, h1, h2, h3, h4, h5, h6 {
 fieldset {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   margin: 0;
   padding: 0;
   height: 60px;
   border: none;
   width: 100%;
-  // margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 input {
@@ -72,7 +72,7 @@ input {
   width: 100%;
   border: none;
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px;
 }
 
 
@@ -82,7 +82,7 @@ input::placeholder {
 
 small {
   color: $error;
-  font-size: 10px;
+  font-size: 0.62rem;
   letter-spacing: 0.1rem;
 }
 
@@ -95,11 +95,12 @@ button {
   background-color: $primary;
   transition: 0.5s;
   cursor: pointer;
-  height: 40px;
+  height: 35px;
   border-radius: 5px;
-  @include elevation(3);
+  @include elevation(2);
   &:disabled {
     background-color: transparentize($color: $primary, $amount: 0.5);
+    @include elevation(0);
   }
   width: 80%;
   &:hover {
