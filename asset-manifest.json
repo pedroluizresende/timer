@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/timer/static/css/main.cada2505.css",
-    "main.js": "/timer/static/js/main.0e28d2d1.js",
+    "main.js": "/timer/static/js/main.a537c03b.js",
     "static/js/787.8e9e615b.chunk.js": "/timer/static/js/787.8e9e615b.chunk.js",
     "static/media/alarm.mp3": "/timer/static/media/alarm.9f2d1490571f046d11de.mp3",
     "static/media/beep.mp3": "/timer/static/media/beep.b625ecb4f95493278105.mp3",
     "index.html": "/timer/index.html",
     "main.cada2505.css.map": "/timer/static/css/main.cada2505.css.map",
-    "main.0e28d2d1.js.map": "/timer/static/js/main.0e28d2d1.js.map",
+    "main.a537c03b.js.map": "/timer/static/js/main.a537c03b.js.map",
     "787.8e9e615b.chunk.js.map": "/timer/static/js/787.8e9e615b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cada2505.css",
-    "static/js/main.0e28d2d1.js"
+    "static/js/main.a537c03b.js"
   ]
 }
