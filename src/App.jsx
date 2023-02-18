@@ -98,8 +98,9 @@ function App() {
         display: finish ? 'flex' : 'none'
       }}
     >
-      <i id="close-icon" class="fa-solid fa-xmark"></i>
-      <i id="clock-icon" class="fa-solid fa-stopwatch"></i>
+      <i id="close-icon"
+       className="fa-solid fa-xmark"></i>
+      <i id="clock-icon" className="fa-solid fa-stopwatch"></i>
       <h2> O tempo acabou !!!</h2>
     </div>
     </>
