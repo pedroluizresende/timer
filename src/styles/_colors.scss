@@ -1,0 +1,12 @@
+$bg-white: #f1f7ed;
+$primary: #7ca982;
+$secundary: #243e36;
+$error: #c32f27;
+
+@mixin elevation ($value){
+  box-shadow: 0 4px 4px rgba(0,0,0, $value * 0.1);
+}
+
+@mixin lowering ($value) {
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, $value * 0.1);
+}

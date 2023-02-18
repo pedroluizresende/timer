@@ -6,7 +6,8 @@ function FormTimer() {
   const [timerInput, setTimerInput] = useState('');
   const [ isDisabled, setIsDisabled] = useState(true)
   const [ background, setBackground] = useState(true)
-  const {setTimerValue, isRunning, setIsRunning } = useContext(TimerContext)
+  const {setTimerValue, isRunning, setIsRunning,
+    setEnding } = useContext(TimerContext)
   const [ isBigger, setIsBigger ] = useState(false)
 
 
@@ -62,74 +63,83 @@ useEffect(() =>{
         onClick={ () => {
           setIsRunning(false)
           setTimerValue({mins: 0, seconds: 0})
+          setEnding({
+            isEnding: false,
+            timer: 6,
+          })
         }}
       >
-          Stop
+          parar
       </button>
     )
   }
 
   return (
     <>
+    <div className='timer'>
     {
       !isRunning &&  <h2>{ preview }</h2> 
     }
-   
+   </div>
     <form>
-      <input
-        type="text"
-        name="timeInput"
-        placeholder="ex: 2m3s"
-        value={ timerInput }
-        onChange={ handleChangle }
-        style={ { 
-          backgroundColor: background ? 'white' : 'lightcoral'
-         } }
-      />
-      {
-        isBigger &&  <span>minutos e segundos não podem ultrapassar 59</span>
-      }
-     
+      <fieldset>
+        <input
+          type="text"
+          name="timeInput"
+          placeholder="ex: 2m3s"
+          value={ timerInput }
+          onChange={ handleChangle }
+        />
+        {
+          !background &&  <small>formato incorreto!!! ex: 2m30s</small>
+        }
+        {
+          isBigger &&  <small>minutos e segundos não podem ultrapassar 59!!!</small>
+        }
+     </fieldset>
       <button
         type='button'
         disabled={ isDisabled }
         onClick={ clickChange }
       >
-        Start
+        iniciar
       </button>
       <section className='options-btn'>
-      <button
-        type='button'
-        onClick={ () => {
-          setTimerInput('5m0s')
-        } }
-      >
-        5 min
-      </button>
-      <button
-        type='button'
-        onClick={ () => {
-          setTimerInput('10m0s')
-        } }
-      >
-       10 min
-      </button>
-      <button
-        type='button'
-        onClick={ () => {
-          setTimerInput('15m0s')
-        } }
-      >
-        15 min
-      </button>
-      <button
-        type='button'
-        onClick={ () => {
-          setTimerInput('30m0s')
-        } }
-      >
-        30 min
-      </button>
+        <h3>Predefinicões</h3>
+        <div>
+          <button
+            type='button'
+            onClick={ () => {
+              setTimerInput('5m0s')
+            } }
+          >
+            5 min
+          </button>
+          <button
+            type='button'
+            onClick={ () => {
+              setTimerInput('10m0s')
+            } }
+          >
+          10 min
+          </button>
+          <button
+            type='button'
+            onClick={ () => {
+              setTimerInput('15m0s')
+            } }
+          >
+            15 min
+          </button>
+          <button
+            type='button'
+            onClick={ () => {
+              setTimerInput('30m0s')
+            } }
+          >
+            30 min
+          </button>
+        </div>
       </section>
     </form>
     </>

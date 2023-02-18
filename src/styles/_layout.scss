@@ -1,0 +1,72 @@
+header{
+  width: 100%;
+  padding:80px;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  h1 {
+    text-align: center;
+    font-size: 60px;
+    letter-spacing: 0.5rem;
+  }
+}
+
+.timer-container {
+  align-items: center;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  h2 {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 400;
+    margin-bottom: 100px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    height: 170px;
+    width: 400px;
+    animation: none;
+    transition: 0.5s;
+    @include lowering(2)
+  }
+}
+
+form {
+  align-items: center;
+  background-color: transparentize($color: $primary, $amount: 0.7);
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 40px 20px;
+  width: 500px;
+  animation: fade 0.5s forwards;
+  @include elevation(2)
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mudanca {
+  0% {
+    font-size: 80px;
+  }
+  50% {
+    font-size: 81px;
+  }
+  100% {
+    font-size: 80px;
+  }
+}

@@ -1,3 +1,4 @@
+@use 'sass:color';
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -22,8 +23,11 @@ html, body {
   5. Improve text rendering
 */
 body {
+  color: $secundary;
+  font-family: 'Orbitron', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: $bg-white;
 }
 /*
   6. Improve media defaults
@@ -49,4 +53,71 @@ p, h1, h2, h3, h4, h5, h6 {
 */
 #root, #__next {
   isolation: isolate;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  border: none;
+  width: 100%;
+  // margin-bottom: 10px;
+}
+
+input {
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+input::placeholder {
+  color: #243e3696
+}
+
+small {
+  color: $error;
+  font-size: 10px;
+  letter-spacing: 0.1rem;
+}
+
+button {
+  animation: fade 1s forwards;
+  color: $bg-white;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background-color: $primary;
+  transition: 0.5s;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 5px;
+  @include elevation(3);
+  &:disabled {
+    background-color: transparentize($color: $primary, $amount: 0.5);
+  }
+  width: 80%;
+  &:hover {
+    background-color: color.scale($primary, $blackness: 8%)
+  }
+}
+
+button:active {
+  @include elevation(0);
+  @include lowering (3);
+}
+
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
