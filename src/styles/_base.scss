@@ -63,7 +63,7 @@ fieldset {
   padding: 0;
   height: 60px;
   border: none;
-  width: 100%;
+  width: 80%;
   margin-bottom: 10px;
 }
 
@@ -73,6 +73,7 @@ input {
   border: none;
   border-radius: 5px;
   padding: 10px;
+  max-width: 448px;
 }
 
 
@@ -82,9 +83,11 @@ input::placeholder {
 
 small {
   color: $error;
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   letter-spacing: 0.1rem;
+  margin-top: 4px;
 }
+
 
 button {
   animation: fade 1s forwards;
@@ -110,7 +113,7 @@ button {
 
 button:active {
   @include elevation(0);
-  @include lowering (3);
+  @include lowering (7);
 }
 
 
@@ -130,10 +133,16 @@ button:active {
   fieldset {
     width: 80%;
   }
+  input {
+    padding: 20px;
+  }
 }
 
 @media screen and (min-width: 1025px){
   body {
     font-size: 16px;
+  }
+  input {
+    padding:20px 30px;
   }
 }

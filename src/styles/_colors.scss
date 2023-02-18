@@ -1,7 +1,7 @@
-$bg-white: #f1f7ed;
-$primary: #7ca982;
-$secundary: #243e36;
-$error: #c32f27;
+$bg-white: #e5e5e5;
+$primary: #fca311;
+$secundary: #14213d;
+$error: #ce4109;
 
 @mixin elevation ($value){
   box-shadow: 0 4px 4px rgba(0,0,0, $value * 0.1);

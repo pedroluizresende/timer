@@ -2,6 +2,8 @@
   margin-top: 20px;
   width: 100%;
   h3 {
+    text-align: center;
+    color: $primary;
     letter-spacing: 0.3rem;
     margin-bottom: 10px;
   }
@@ -47,6 +49,8 @@
 
 #clock-icon {
   font-size: 6.25rem;
+  color: $primary;
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 }
 
 
@@ -55,6 +59,10 @@
   font-size: 1.88rem;
   top: 12px;
   right: 12px;
+}
+
+#stop-btn {
+  color: $secundary;
 }
 
 @keyframes fade {

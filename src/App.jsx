@@ -76,8 +76,7 @@ function App() {
           isRunning && 
           <h2
           style={{
-            color: ending.timer < 6 ? '#c32f27': '#243e36',
-            animation: ending.isEnding ? 'mudanca 1s infinite': 'none'
+            color: ending.timer < 6 ? '#c32f27': '#fca311',
           }}
           >{ timer }</h2>
         }     
